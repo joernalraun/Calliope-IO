@@ -14,7 +14,7 @@ nahe Erkennung, Buttons A/B, Ringpads P0–P3, zwei Motoren.
 ## Voraussetzungen
 
 1. **Calliope mini V3**
-2. **mbFirmata-Firmware** (siehe `Software/Java/Firmata/README.md`) auf den
+2. **Firmata-Firmware** (siehe `Software/Java/Firmata/README.md`) auf den
    Calliope mini geflasht
 3. **Java 17+**, BlueJ (oder eine andere Java-IDE)
 4. **Bibliotheken**: `jSerialComm` und `jSSC`
