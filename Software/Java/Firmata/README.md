@@ -1,4 +1,4 @@
-# mbFirmata-Firmware für den Calliope mini V3
+# Firmata-Firmware für den Calliope mini V3
 
 Calliope-IO benötigt eine Firmata-Firmware auf dem Calliope mini.
 
@@ -7,12 +7,7 @@ Calliope-IO benötigt eine Firmata-Firmware auf dem Calliope mini.
 In diesem Ordner liegt eine **vorkompilierte** Firmware:
 
 - **[`CalliopeMiniFirmata.hex`](CalliopeMiniFirmata.hex)** (~533 KB)
-  Gebaut aus
-  [`../../../../microbit-firmata-master/firmware/source/`](../../../../microbit-firmata-master/firmware/source/)
-  gegen den Calliope-mini-CODAL-Fork
-  ([`codal-microbit-v2-calliope`](../../../../codal-microbit-v2-calliope/))
-  und das Calliope-mini-Sample-Repo
-  ([`microbit-v2-samples-calliope`](../../../../microbit-v2-samples-calliope/)).
+  Gebaut gegen den Calliope-mini-CODAL-Fork und das Calliope-mini-Sample-Repo.
 
 ### Flashen
 
@@ -38,14 +33,14 @@ Falls die mitgelieferte `.hex` aktualisiert werden soll (z. B. nach
    brew install cmake ninja python srecord
    ```
 2. **Build-Wrapper bereitstellen.** Das Calliope-Sample-Repo ist
-   [`../../../../microbit-v2-samples-calliope/`](../../../../microbit-v2-samples-calliope/);
+   [`[../../../../calliopemini-samples/](https://github.com/calliope-edu/calliopemini-samples/tree/calliope_nov24)`][(https://github.com/calliope-edu/microbit-v2-samples/tree/calliope_nov24];
    es lädt den Calliope-CODAL-Fork (Branch `v0.2.57-calliope-1.5`) beim
    ersten Build automatisch nach.
 3. **Firmata-Source einschleusen.**
    ```bash
-   SAMPLES=../../../../microbit-v2-samples-calliope
+   SAMPLES=https://github.com/calliope-edu/calliopemini-samples/tree/calliope_nov24
    rm -rf "$SAMPLES/source"
-   cp -R ../../../../microbit-firmata-master/firmware/source "$SAMPLES/source"
+   cp -R ../../../../calliopemini-firmata-master/firmware/source "$SAMPLES/source"
    ```
 4. **`versions.h` ergänzen.** Am Ende von
    `$SAMPLES/source/versions.h` folgende Zeile einfügen
@@ -59,7 +54,7 @@ Falls die mitgelieferte `.hex` aktualisiert werden soll (z. B. nach
    {
        "target": {
            "name": "codal-microbit-v2",
-           "url": "https://github.com/calliope-edu/codal-microbit-v2",
+           "url": "https://github.com/calliope-edu/codal-calliopemini",
            "branch": "v0.2.57-calliope-1.5",
            "type": "git"
        },
@@ -78,7 +73,7 @@ Falls die mitgelieferte `.hex` aktualisiert werden soll (z. B. nach
    cd "$SAMPLES"
    python3 build.py
    ```
-   Ergebnis: `MICROBIT.hex` im Repo-Root. Diese in
+   Ergebnis: `MINI.hex` im Repo-Root. Diese in
    `Calliope-IO/Software/Java/Firmata/CalliopeMiniFirmata.hex` kopieren.
 
 ## Wichtige Hinweise
