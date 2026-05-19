@@ -70,16 +70,28 @@ public class CalliopeIO {
         validPids.add(pid);
     }
 
+    private boolean openAttempted = false;
+
     private void ensureConnected() {
-        if (!boardActive) {
+        if (boardActive && link != null) return;
+        if (!openAttempted) {
+            openAttempted = true;
             System.out.println("Starte automatische Verbindung zum Calliope mini...");
             open();
+        }
+        if (link == null) {
+            throw new IllegalStateException(
+                "Calliope mini nicht verbunden. " +
+                "Bitte Firmware flashen (Calliope-IO/Software/Java/Firmata/CalliopeMiniFirmata.hex) " +
+                "und USB-Kabel prüfen. Mit hardReset() lässt sich ein neuer Verbindungsversuch anstoßen."
+            );
         }
     }
 
     // ---- Verbindung --------------------------------------------------------
 
     public void open() {
+        openAttempted = true;
         if (link != null) {
             System.err.println("Calliope mini ist bereits verbunden.");
             return;
@@ -130,6 +142,7 @@ public class CalliopeIO {
         try { stopAllLoops(); } catch (Exception ignored) {}
         if (link != null) { try { link.close(); } catch (Exception ignored) {} link = null; }
         boardActive = false;
+        openAttempted = false;
         if (monitorThread != null) { monitorThread.interrupt(); monitorThread = null; }
         System.out.println("Hard-Reset abgeschlossen.");
     }
@@ -140,12 +153,29 @@ public class CalliopeIO {
             int vid = p.getVendorID();
             int pid = p.getProductID();
             if (validVids.contains(vid) && validPids.contains(pid)) {
+                String id = portIdentifier(p);
                 System.out.printf("Calliope-mini-Kandidat: %s (VID=0x%04X, PID=0x%04X)%n",
-                        p.getSystemPortName(), vid, pid);
-                return p.getSystemPortName();
+                        id, vid, pid);
+                return id;
             }
         }
         return null;
+    }
+
+    /**
+     * Liefert den Port-Namen in der Form, die jSSC erwartet.
+     * jSerialComm gibt unter macOS/Linux nur den Basenamen (z. B. "cu.usbmodem102"),
+     * jSSC will jedoch den vollen Geräte-Pfad ("/dev/cu.usbmodem102").
+     */
+    private static String portIdentifier(SerialPort p) {
+        String name = p.getSystemPortName();
+        String os = System.getProperty("os.name").toLowerCase();
+        boolean unixLike = os.contains("mac") || os.contains("darwin")
+                        || os.contains("nux") || os.contains("nix") || os.contains("aix");
+        if (unixLike && name != null && !name.startsWith("/")) {
+            return "/dev/" + name;
+        }
+        return name;
     }
 
     private void initPins() {

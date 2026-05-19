@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Fensteralarm
+comment0.text=\n\ Fensteralarm\ auf\ dem\ Calliope\ mini\ V3.\n\n\ Der\ Calliope\ mini\ wird\ ans\ Fenster\ geh\u00E4ngt;\ ein\ kleiner\ Magnet\ sitzt\ am\ Rahmen.\n\ Bewegt\ sich\ das\ Fenster,\ ver\u00E4ndert\ sich\ das\ Magnetfeld\ am\ Kompass-Sensor.\n\ \u00DCbersteigt\ die\ \u00C4nderung\ einen\ Schwellwert,\ gibt\ der\ Buzzer\ (externer\ Buzzer\n\ an\ Ringpad\ P0)\ Alarm\ und\ die\ LED-Matrix\ zeigt\ ein\ Ausrufezeichen.\n
+comment1.params=
+comment1.target=void\ start()
+comment2.params=
+comment2.target=void\ loop()
+comment3.params=
+comment3.target=int\ magnitude()
+comment4.params=
+comment4.target=void\ alarm()
+comment5.params=
+comment5.target=void\ zeigeAusrufezeichen()
+comment6.params=
+comment6.target=void\ stopp()
+numComments=7

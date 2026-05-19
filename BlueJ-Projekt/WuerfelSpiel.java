@@ -17,7 +17,17 @@ public class WuerfelSpiel {
 
     public void start() {
         calliope.open();
-        magnetReferenz = magnitude();
+        // Sensor-Streams brauchen kurz, bis die ersten Werte eintreffen.
+        // Danach den Mittelwert mehrerer Messungen als Referenz nehmen.
+        calliope.pause(300);
+        long sum = 0;
+        int n = 8;
+        for (int i = 0; i < n; i++) {
+            sum += magnitude();
+            calliope.pause(60);
+        }
+        magnetReferenz = (int) (sum / n);
+        System.out.println("Magnet-Referenz: " + magnetReferenz);
         loopID = calliope.startLoopWithDelay(this, "loop", 100);
     }
 
@@ -49,13 +59,35 @@ public class WuerfelSpiel {
     }
 
     private void zeigeAugen(int n) {
-        int[][] g = new int[5][5];
-        if (n >= 1) g[2][2] = 255;
-        if (n >= 2) { g[0][0] = 255; g[4][4] = 255; }
-        if (n >= 3) { g[4][0] = 255; }
-        if (n >= 4) { g[0][4] = 255; }
-        if (n >= 5) { /* schon gesetzt */ }
-        if (n == 6) { g[2][0] = 255; g[2][4] = 255; g[2][2] = 0; }
+        int[][] g = new int[5][5]; // [y][x]
+        switch (n) {
+            case 1:
+                g[2][2] = 255;
+                break;
+            case 2:
+                g[0][0] = 255;
+                g[4][4] = 255;
+                break;
+            case 3:
+                g[0][0] = 255;
+                g[2][2] = 255;
+                g[4][4] = 255;
+                break;
+            case 4:
+                g[0][0] = 255; g[0][4] = 255;
+                g[4][0] = 255; g[4][4] = 255;
+                break;
+            case 5:
+                g[0][0] = 255; g[0][4] = 255;
+                g[2][2] = 255;
+                g[4][0] = 255; g[4][4] = 255;
+                break;
+            case 6:
+                g[0][0] = 255; g[0][4] = 255;
+                g[2][0] = 255; g[2][4] = 255;
+                g[4][0] = 255; g[4][4] = 255;
+                break;
+        }
         calliope.showImage(g);
     }
 

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=WuerfelSpiel
+comment0.text=\n\ W\u00FCrfelspiel\ auf\ dem\ Calliope\ mini\ V3.\n\n\ Sch\u00FCtteln\ (oder\ Button\ A)\ wirft\ den\ W\u00FCrfel\ \u2014\ das\ Ergebnis\ (1..6)\ wird\n\ als\ Augenmuster\ auf\ der\ LED-Matrix\ gezeigt.\n\n\ Schummelmodus\:\ liegt\ ein\ Magnet\ am\ Calliope\ mini,\ f\u00E4llt\ der\ W\u00FCrfel\ immer\ auf\ 6.\n\ Zu\ hell?\ Gl\u00FCcksspiele\ sind\ dann\ verboten\ (Display\ bleibt\ aus).\n
+comment1.params=
+comment1.target=void\ start()
+comment2.params=
+comment2.target=void\ loop()
+comment3.params=
+comment3.target=boolean\ istMagnetAn()
+comment4.params=
+comment4.target=int\ magnitude()
+comment5.params=n
+comment5.target=void\ zeigeAugen(int)
+comment6.params=
+comment6.target=void\ stopp()
+numComments=7

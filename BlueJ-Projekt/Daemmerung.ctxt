@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Daemmerung
+comment0.text=\n\ D\u00E4mmerungsschalter\ auf\ dem\ Calliope\ mini\ V3.\n\n\ Wenn\ der\ Lichtsensor\ (integriert\ in\ der\ LED-Matrix)\ unter\ einen\ Schwellwert\n\ f\u00E4llt,\ leuchtet\ die\ mittlere\ RGB-LED\ warm-wei\u00DF\ als\ "Stra\u00DFenbeleuchtung".\n
+comment1.params=
+comment1.target=void\ start()
+comment2.params=
+comment2.target=void\ loop()
+comment3.params=
+comment3.target=void\ stopp()
+numComments=4
