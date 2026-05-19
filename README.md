@@ -110,7 +110,7 @@ API-Methoden in `snake_case`.
 - `setPadDigitalOut(pad)` / `writePadDigital(pad, state)`
 - `setPadPwm(pad)` / `writePadPwm(pad, 0..1023)`
 
-### Interner Lautsprecher (Calliope mini)
+### Interner Lautsprecher
 - `playTone(frequencyHz, durationMs)` — Ton mit beliebiger Frequenz
 - `playBeep(durationMs)` — kurzer Standard-Piepton (1000 Hz), blockierend
 - `stopBeep()` — Ton sofort abschalten
