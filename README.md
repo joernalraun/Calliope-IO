@@ -1,8 +1,8 @@
-# Calliope-IO — PC-Programmierung für den Calliope mini V3 (Java & Python)
+# Calliope-IO PC-Programmierung für den Calliope mini V3 (Java & Python)
 
-Dieses Projekt ist das Calliope-mini-V3-Pendant zu **Pico-IO** (https://github.com/ToniTaste/Pico-IO/):
-Es ermöglicht, den Calliope mini von einem PC aus mit **Java** oder
-**Python** zu programmieren — im gleichen didaktischen Stil wie Pico-IO
+Dieses Projekt ist das Calliope mini Version zu **Pico-IO** (https://github.com/ToniTaste/Pico-IO/):
+Es ermöglicht, den Calliope mini 3 von einem PC aus mit **Java** oder
+**Python** zu programmieren — im gleichen Stil wie Pico-IO
 (`CalliopeIO`-Klasse + `hardware`-Wrapper, Loop-System, BlueJ- bzw.
 Thonny-/IDLE-kompatibel).
 
@@ -10,11 +10,10 @@ Beide Sprach-Varianten teilen sich **dieselbe Firmware** auf dem Calliope
 mini ([`Software/Java/Firmata/CalliopeMiniFirmata.hex`](Software/Java/Firmata/CalliopeMiniFirmata.hex)) —
 nur der PC-seitige Code unterscheidet sich.
 
-Anders als bei Pico-IO ist die Hardware-API **Calliope-mini-nativ**: statt
+Anders als bei Pico-IO ist die Hardware-API **Calliope mini nativ**: statt
 externer LEDs/Hallsensor/Buzzer auf einer eigenen Platine wird die
-**eingebaute** Calliope-mini-Hardware angesprochen — LED-Matrix, RGB-LEDs,
-Beschleunigungssensor, Kompass, Temperatursensor, Lichtsensor, Mikrofon-
-nahe Erkennung, Buttons A/B, Ringpads P0–P3, zwei Motoren.
+integrierte Calliope mini Hardware angesprochen — LED-Matrix, RGB-LEDs,
+Beschleunigungssensor, Kompass, Temperatursensor, Lichtsensor, Mikrofon, Buttons A/B, Touch-Pins P0–P3, zwei Motoren.
 
 ## Voraussetzungen
 
