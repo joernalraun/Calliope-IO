@@ -1,9 +1,14 @@
-# Calliope-IO — Java-Programmierung für den Calliope mini V3
+# Calliope-IO — PC-Programmierung für den Calliope mini V3 (Java & Python)
 
-Dieses Projekt ist das Calliope-mini-V3-Pendant zu **Pico-IO** (https://github.com/ToniTaste/Pico-IO/): Es ermöglicht,
-den Calliope mini von einem PC aus mit **Java** zu programmieren — im
-gleichen didaktischen Stil wie Pico-IO (`CalliopeIO`-Klasse + `hardware`-
-Static-Wrapper, Loop-System, BlueJ-kompatibel).
+Dieses Projekt ist das Calliope-mini-V3-Pendant zu **Pico-IO** (https://github.com/ToniTaste/Pico-IO/):
+Es ermöglicht, den Calliope mini von einem PC aus mit **Java** oder
+**Python** zu programmieren — im gleichen didaktischen Stil wie Pico-IO
+(`CalliopeIO`-Klasse + `hardware`-Wrapper, Loop-System, BlueJ- bzw.
+Thonny-/IDLE-kompatibel).
+
+Beide Sprach-Varianten teilen sich **dieselbe Firmware** auf dem Calliope
+mini ([`Software/Java/Firmata/CalliopeMiniFirmata.hex`](Software/Java/Firmata/CalliopeMiniFirmata.hex)) —
+nur der PC-seitige Code unterscheidet sich.
 
 Anders als bei Pico-IO ist die Hardware-API **Calliope-mini-nativ**: statt
 externer LEDs/Hallsensor/Buzzer auf einer eigenen Platine wird die
@@ -14,13 +19,18 @@ nahe Erkennung, Buttons A/B, Ringpads P0–P3, zwei Motoren.
 ## Voraussetzungen
 
 1. **Calliope mini V3**
-2. **Firmata-Firmware** (siehe `Software/Java/Firmata/README.md`) auf den
-   Calliope mini geflasht
-3. **Java 17+**, BlueJ (oder eine andere Java-IDE)
-4. **Bibliotheken**: `jSerialComm` und `jSSC`
-   (siehe `Software/Java/Bibliotheken/README.md`)
+2. **Firmata-Firmware** (siehe [`Software/Java/Firmata/README.md`](Software/Java/Firmata/README.md))
+   auf den Calliope mini geflasht
+3. **Eine der beiden Programmierumgebungen:**
+   - **Java 17+** mit BlueJ (oder einer anderen Java-IDE) — Bibliotheken
+     `jSerialComm` und `jSSC` (siehe
+     [`Software/Java/Bibliotheken/README.md`](Software/Java/Bibliotheken/README.md))
+   - **Python 3.8+** mit pyserial (siehe
+     [`Software/Python/Bibliotheken/README.md`](Software/Python/Bibliotheken/README.md))
 
 ## Schnellstart
+
+### Java
 
 ```java
 public class HalloCalliopeMini {
@@ -42,6 +52,33 @@ Oder per Static-Wrapper:
 hardware.scrollText("Hallo Welt!");
 hardware.setRgbAll(0, 255, 0);
 ```
+
+### Python
+
+```python
+from calliope_io import CalliopeIO
+
+c = CalliopeIO()
+c.open()
+c.scroll_text("Hallo Welt!")
+c.pause(2500)
+c.set_rgb_all(255, 0, 100)
+c.pause(1000)
+c.close()
+```
+
+Oder per Modul-Wrapper:
+
+```python
+import hardware
+hardware.scroll_text("Hallo Welt!")
+hardware.set_rgb_all(0, 255, 0)
+```
+
+Die Python-Variante liegt vollständig unter
+[`Software/Python/`](Software/Python/) — dort gibt es ein eigenes
+[README](Software/Python/README.md), die gleichen vier Beispiele und alle
+API-Methoden in `snake_case`.
 
 ## Funktionsübersicht
 
