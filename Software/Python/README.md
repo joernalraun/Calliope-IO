@@ -83,7 +83,7 @@ hardware.close()
 - `compass_x()`, `compass_y()`, `compass_z()`, **`compass()` → Tupel**, `compass_heading()`
 - `temperature()` (°C), `light_level()` (0..255), `was_shaken()`
 
-### Ringpads P0–P3
+### Touch-Pins P0–P3
 - `set_pad_analog_in(pad)` / `read_pad_analog(pad)`
 - `set_pad_digital_in(pad, pull_up=False)` / `read_pad_digital(pad)`
 - `set_pad_digital_out(pad)` / `write_pad_digital(pad, state)`
@@ -107,7 +107,7 @@ hardware.close()
 
 ## Beispiele (mit Klassen-Pattern wie Pico-IO)
 
-| Datei | Was es macht |
+| Datei | Was passiert |
 |---|---|
 | `bedarfsampel.py` | Zwei RGB-LEDs als Auto- und Fußgängerampel, Button A als Anforderungstaster |
 | `daemmerung.py`   | Lichtsensor steuert die mittlere RGB-LED als Straßenlaterne |
@@ -141,7 +141,7 @@ Python/
     └── README.md
 ```
 
-## Stolperfallen
+## FAQ
 
 - **„Kein Calliope mini V3 gefunden":** Firmware noch nicht geflasht, falscher
   USB-Port, oder eine andere Anwendung hält den seriellen Port offen
