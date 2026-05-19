@@ -9,7 +9,7 @@ nur die Programmiersprache (und Sprachkonventionen) sind eine andere.
 
 ## Voraussetzungen
 
-1. **Calliope mini V3** mit der mbFirmata-Firmware
+1. **Calliope mini V3** mit der Firmata-Firmware
    ([`../Java/Firmata/CalliopeMiniFirmata.hex`](../Java/Firmata/CalliopeMiniFirmata.hex)
    funktioniert für Java **und** Python — ein und dieselbe Datei).
 2. **Python 3.9+** (für die `list[...]` / `tuple[...]`-Generics in den
