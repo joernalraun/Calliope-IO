@@ -104,7 +104,7 @@ API-Methoden in `snake_case`.
 - `getCompassX/Y/Z()`, `getCompassHeading()`
 - `getTemperature()` (°C), `getLightLevel()` (0..255)
 
-### Ringpads P0–P3
+### Touch-Pins P0–P3
 - `setPadAnalogIn(pad)` / `readPadAnalog(pad)`
 - `setPadDigitalIn(pad, pullUp)` / `readPadDigital(pad)`
 - `setPadDigitalOut(pad)` / `writePadDigital(pad, state)`
@@ -133,7 +133,7 @@ bedeutet „Ton läuft, bis `stopBeep()` aufgerufen wird".
 
 Vier didaktische Anwendungen analog zu Pico-IO im Ordner `Software/Java/Beispiele/`:
 
-| Datei | Was es macht |
+| Datei | Was passiert |
 |---|---|
 | `Bedarfsampel.java` | Zwei RGB-LEDs als Auto- und Fußgängerampel, Button A als Anforderungstaster |
 | `Daemmerung.java`   | Lichtsensor steuert die mittlere RGB-LED als Straßenlaterne |
