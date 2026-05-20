@@ -1,12 +1,12 @@
-# Calliope-IO PC-Programmierung für den Calliope mini V3 (Java & Python)
+# Calliope-IO Java und Python Programmierung für den Calliope mini V3
 
-Dieses Projekt ist das Calliope mini Version zu **Pico-IO** (https://github.com/ToniTaste/Pico-IO/):
+Dieses Projekt ist die Calliope mini Version zu **Pico-IO** (https://github.com/ToniTaste/Pico-IO/):
 Es ermöglicht, den Calliope mini 3 von einem PC aus mit **Java** oder
 **Python** zu programmieren — im gleichen Stil wie Pico-IO
 (`CalliopeIO`-Klasse + `hardware`-Wrapper, Loop-System, BlueJ- bzw.
 Thonny-/IDLE-kompatibel).
 
-Beide Sprach-Varianten teilen sich **dieselbe Firmware** auf dem Calliope
+Beide Sprach-Varianten teilen sich dieselbe Firmware auf dem Calliope
 mini ([`Software/Java/Firmata/CalliopeMiniFirmata.hex`](Software/Java/Firmata/CalliopeMiniFirmata.hex)) —
 nur der PC-seitige Code unterscheidet sich.
 
