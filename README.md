@@ -1,6 +1,6 @@
 # Calliope-IO Java und Python Programmierung für den Calliope mini V3
 
-Dieses Projekt ist die Calliope mini Version zu **Pico-IO** (https://github.com/ToniTaste/Pico-IO/):
+Dieses Projekt ist die Calliope mini Version von **Pico-IO** (https://github.com/ToniTaste/Pico-IO/):
 Es ermöglicht, den Calliope mini 3 von einem PC aus mit **Java** oder
 **Python** zu programmieren — im gleichen Stil wie Pico-IO
 (`CalliopeIO`-Klasse + `hardware`-Wrapper, Loop-System, BlueJ- bzw.
@@ -10,7 +10,7 @@ Beide Sprach-Varianten teilen sich dieselbe Firmware auf dem Calliope
 mini ([`Software/Java/Firmata/CalliopeMiniFirmata.hex`](Software/Java/Firmata/CalliopeMiniFirmata.hex)) —
 nur der PC-seitige Code unterscheidet sich.
 
-Anders als bei Pico-IO ist die Hardware-API **Calliope mini nativ**: statt
+Anders als bei Pico-IO ist die Hardware-API Calliope mini nativ: statt
 externer LEDs/Hallsensor/Buzzer auf einer eigenen Platine wird die
 integrierte Calliope mini Hardware angesprochen — LED-Matrix, RGB-LEDs,
 Beschleunigungssensor, Kompass, Temperatursensor, Lichtsensor, Mikrofon, Buttons A/B, Touch-Pins P0–P3, zwei Motoren.
@@ -111,7 +111,7 @@ API-Methoden in `snake_case`.
 
 ### Interner Lautsprecher
 - `playTone(frequencyHz, durationMs)` — Ton mit beliebiger Frequenz
-- `playBeep(durationMs)` — kurzer Standard-Piepton (1000 Hz), blockierend
+- `playBeep(durationMs)` — kurzer Standard-Ton (1000 Hz), blockierend
 - `stopBeep()` — Ton sofort abschalten
 
 Intern wird der SysEx `MB_CALLIOPE_SOUND` genutzt; der eingebaute Speaker
